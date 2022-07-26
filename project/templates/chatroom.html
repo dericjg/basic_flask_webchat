@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+
+{%block title%}Chat{%endblock%}
+
+{%block content%}
+<div class="chat-container">
+    <div class="message-box" id="chatroom">
+    </div>
+    <div class="chat-input-container" id="chatroom-input-container">
+        <input type="text" placeholder="Enter your message..." id="message-input-box">
+        <button id="send-message-button">Send</button>
+    </div>
+</div>
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='scripts/app.js')}}"></script>
+<script type="text/javascript">
+    const uname = `{{current_user.username}}`;
+</script>
+{%endblock%}
